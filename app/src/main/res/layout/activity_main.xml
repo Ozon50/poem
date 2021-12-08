@@ -7,25 +7,37 @@
     android:background="@color/grey"
     tools:context=".MainActivity">
 
-    <com.google.android.material.chip.ChipGroup
+    <TextView
+        android:id="@+id/textViewId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
+        android:text="Test informer"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"  />
 
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
 
         <Button
+            android:id="@+id/main_read_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onMyButtonClick"
+            android:insetBottom="6dp"
             android:text="@string/Read"
             tools:ignore="OnClick" />
 
 
         <Button
+            android:id="@+id/reset_key"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Reset" />
@@ -35,4 +47,47 @@
             android:layout_height="wrap_content"
             android:text="@string/Write" />
     </com.google.android.material.chip.ChipGroup>
+
+    <Button
+        android:id="@+id/conect_button_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connect"
+        app:layout_constraintBottom_toTopOf="@+id/chipGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="wrap_content"
+        android:layout_height="40sp"
+
+        app:layout_constraintBottom_toTopOf="@+id/conect_button_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewId"
+        app:layout_constraintVertical_bias="0.945">
+
+
+        <EditText
+            style="@style/Theme.5.MyStyle.Other"
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="250dp"
+            android:minHeight="40sp"
+            android:text="@string/command" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit" />
+    </com.google.android.material.chip.ChipGroup>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--
+    style="@style/Theme.5.MyStyle.button"
+     android:backgroundTint="@color/grey_button"
+    -->
